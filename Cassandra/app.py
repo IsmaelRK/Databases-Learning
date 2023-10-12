@@ -1,3 +1,6 @@
+#Note: Set keyspace ---> Set Tables --> Enjoy ;)
+
+
 from cassandra.cluster import Cluster
 import uuid
 

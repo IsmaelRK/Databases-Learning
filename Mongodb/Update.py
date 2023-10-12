@@ -5,4 +5,4 @@ client = pymongo.MongoClient("mongodb://localhost:27017")
 db = client["learn"]
 collection = db["learningMongo"]
 
-collection.delete_many({"position": "Developer"})  # _many ou _one
+collection.update_one({"name": "Pirolise"}, {"$set": {"idade": 35}})

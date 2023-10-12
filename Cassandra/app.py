@@ -22,7 +22,16 @@ age = '126'
 
 
 insertDt_query = f"INSERT INTO mytest.mytable (id, nome, idade) VALUES (uuid(), '{nm}', {age})"
-session.execute(insertDt_query)
+# session.execute(insertDt_query)
+
+
+
+
+id = uuid.UUID('f4ed0526-f8d8-48cd-ab0a-10316928ec70')
+upd_query = f"UPDATE mytable SET nome = 'pirolise99' WHERE id = {id};"  # --> del_query = f"DELETE FROM mytable WHERE id = {id};"
+
+session.execute(upd_query)
+
 
 
 slct_query = "SELECT * FROM mytable;"

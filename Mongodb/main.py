@@ -35,4 +35,3 @@ results = collection.find({"age": {"$gte": 17}})
 
 for x in results:
     print(x)
-

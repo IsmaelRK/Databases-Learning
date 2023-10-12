@@ -1,4 +1,5 @@
 from cassandra.cluster import Cluster
+import uuid
 
 cluster = Cluster(['127.0.0.1'])
 session = cluster.connect('mytest')
@@ -11,17 +12,18 @@ CREATE TABLE IF NOT EXISTS mytable (
 );
 """
 
-insertDt_query = """
-INSERT INTO mytest.mytable (id, nome, idade)
-VALUES (uuid(), 'Ismael', 16);
-"""
-
-nome = 'Ismael'
-idade = 16
-
-
 session.execute(crtTable_query)
+
+
+id = uuid.uuid4()
+print(id)
+nm = 'Ismael2'
+age = '126'
+
+
+insertDt_query = f"INSERT INTO mytest.mytable (id, nome, idade) VALUES (uuid(), '{nm}', {age})"
 session.execute(insertDt_query)
+
 
 slct_query = "SELECT * FROM mytable;"
 result = session.execute(slct_query)
